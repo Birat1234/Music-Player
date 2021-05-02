@@ -120,6 +120,14 @@ h3 {
   flex-direction: row;
 }
 
+.volume-controls:hover{
+  cursor: pointer;
+}
+
+#slider:hover{
+  cursor: pointer;
+}
+
 .volume-controls .fas{
   font-size: 20px;
   color: rgb(129, 129, 129);
