@@ -8,6 +8,11 @@ const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
 const progressContainer = document.getElementById('progress-container');
+const volIncBtn = document.getElementById("volume-Increase");
+const volDecBtn = document.getElementById("volume-Decrease");
+var a = document.getElementById('audio');
+var rangeSlider = document.getElementById('slider');
+
  
 
 
@@ -137,10 +142,36 @@ function SetProgressBar(e) {
     music.currentTime = ((clickX/width)*duration);
 }
 
+
+
 //On Load Music
 loadSong(songs[songIndex]);
+
+
+function incVolume() {
+
+    if (a.volume < 1.0) {
+        a.volume = a.volume+ 0.2;
+        
+    }
+}
+
+function decVolume() {
+    if (a.volume > 0.0) {
+        a.volume = a.volume - 0.2;
+        
+    }
+}
+
+console.log(rangeSlider.value);
+rangeSlider.oninput = function() {
+    a.volume = this.value;
+    console.log(a.volume);
+}
 
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 music.addEventListener('timeupdate', updateProgressBar);
 progressContainer.addEventListener('click', SetProgressBar);
+volIncBtn.addEventListener('click', incVolume);
+volDecBtn.addEventListener('click', decVolume);

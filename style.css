@@ -91,7 +91,7 @@ h3 {
   width: 200px;
 }
 
-.fas {
+.player-controls .fas {
   font-size: 30px;
   color: rgb(129, 129, 129);
   margin-right: 30px;
@@ -109,6 +109,20 @@ h3 {
   font-size: 40px;
   position: relative;
   top: 3px;
+}
+
+.volume-controls{
+  position: relative;
+  top: 15px;
+  left: 80px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.volume-controls .fas{
+  font-size: 20px;
+  color: rgb(129, 129, 129);
 }
 
 /* Media Query: iPhone (Vertical) */
