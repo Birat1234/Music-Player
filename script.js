@@ -101,6 +101,10 @@ function prevSong() {
     playSong();
 }
 
+//On Load Music
+loadSong(songs[songIndex]);
+
+
 function updateProgressBar(x) {
     if (isPlaying) {
        const {currentTime, duration, baseURI} = x.srcElement
@@ -143,9 +147,11 @@ function SetProgressBar(e) {
 }
 
 
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
+music.addEventListener('timeupdate', updateProgressBar);
+progressContainer.addEventListener('click', SetProgressBar);
 
-//On Load Music
-loadSong(songs[songIndex]);
 
 
 function incVolume() {
@@ -163,15 +169,9 @@ function decVolume() {
     }
 }
 
-console.log(rangeSlider.value);
 rangeSlider.oninput = function() {
     a.volume = this.value;
-    console.log(a.volume);
 }
 
-prevBtn.addEventListener('click', prevSong);
-nextBtn.addEventListener('click', nextSong);
-music.addEventListener('timeupdate', updateProgressBar);
-progressContainer.addEventListener('click', SetProgressBar);
 volIncBtn.addEventListener('click', incVolume);
 volDecBtn.addEventListener('click', decVolume);

@@ -114,7 +114,7 @@ h3 {
 .volume-controls{
   position: relative;
   top: 15px;
-  left: 80px;
+  left: 110px;
   width: 200px;
   display: flex;
   flex-direction: row;
